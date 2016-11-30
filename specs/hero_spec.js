@@ -7,8 +7,9 @@ var food = require('../food');
 
   beforeEach( function() {
     hero1 = new hero('Dave', 70, 'beef');
-    apple = new food('apple', 5, 'none');
-    beef = new food('beef', 20, 'none');
+    apple = new food('apple', 5, 0);
+    beef = new food('beef', 20, 0);
+    cheese = new food('cheese', 10, 4)
   });
 
 describe('hero', function() {
@@ -41,6 +42,11 @@ describe('hero', function() {
   it('test health changes by 1.5 after eating fav food', function() {
     hero1.eat(beef);
     assert.equal(100, hero1.healthLevel);
+  })
+
+  it('test health depleates after eating poisioned food', function() {
+    hero1.eat(cheese);
+    assert.equal(40, hero1.healthLevel);
   })
 
 })

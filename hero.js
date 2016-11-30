@@ -14,7 +14,9 @@ Hero.prototype = {
     } else {
       this.healthLevel += food.healthValue;
     }
-    return "I am eating " + food.name
+    var poisonHealthDepletion = food.healthValue * food.poisonLevel;
+    this.healthLevel -= poisonHealthDepletion;
+    return "I am eating " + food.name;
   }
 };
 
