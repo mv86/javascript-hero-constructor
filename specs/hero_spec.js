@@ -7,8 +7,8 @@ var food = require('../food');
 
   beforeEach( function() {
     hero1 = new hero('Dave', 70, 'beef');
-    apple = new food('apple', 5);
-    beef = new food('beef', 20);
+    apple = new food('apple', 5, 'none');
+    beef = new food('beef', 20, 'none');
   });
 
 describe('hero', function() {
