@@ -6,8 +6,9 @@ var food = require('../food');
   var apple;
 
   beforeEach( function() {
-    hero1 = new hero('Dave', 70, 'Beef');
+    hero1 = new hero('Dave', 70, 'beef');
     apple = new food('apple', 5);
+    beef = new food('beef', 20);
   });
 
 describe('hero', function() {
@@ -21,7 +22,7 @@ describe('hero', function() {
   });
 
   it('test has favourite food', function() {
-    assert.equal('Beef', hero1.favouriteFood);
+    assert.equal('beef', hero1.favouriteFood);
   });
 
   it('test uses prototype talk method', function() {
@@ -35,6 +36,11 @@ describe('hero', function() {
   it('test health changes after eating', function() {
     hero1.eat(apple);
     assert.equal(75, hero1.healthLevel);
+  })
+
+  it('test health changes by 1.5 after eating fav food', function() {
+    hero1.eat(beef);
+    assert.equal(100, hero1.healthLevel);
   })
 
 })
